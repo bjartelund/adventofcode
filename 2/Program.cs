@@ -9,19 +9,21 @@ class IncreasingValues
 		//string[] lines = System.IO.File.ReadAllLines(@"example");
 		int horizontal = 0;
 		int depth = 0;
+		int aim=0;
 		foreach (string line in lines)
 		{
 			string[] tokens = line.Split(" ");
 			switch (tokens[0])
 			{
 				case "forward":
-					horizontal += Int32.Parse(tokens[1]);
+					horizontal +=Int32.Parse(tokens[1]);
+					depth += aim*Int32.Parse(tokens[1]);
 					break;
 				case "down":
-					depth += Int32.Parse(tokens[1]);
+					aim += Int32.Parse(tokens[1]);
 					break;
 				case "up":
-					depth -= Int32.Parse(tokens[1]);
+					aim -= Int32.Parse(tokens[1]);
 					break;
 				case "back":
 					horizontal -= Int32.Parse(tokens[1]);
